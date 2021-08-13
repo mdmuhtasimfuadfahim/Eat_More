@@ -1,0 +1,112 @@
+
+<section class="cart py-15">
+    <div class ="mx-auto py-2 xl:w">
+
+        <div class ="flex items-center border-b border-gray-300 pb-4">
+            <h1 class="fas fa-shopping-cart heading py-16 mt-20">Order Summary</h1>
+        </div>
+
+        <!-- cart food item start -->
+        <div class="food-list mr-8">
+            <div class="ml-10 container grid md:grid-cols-2 lg:grid-cols-5 flex items-center my-8">
+                <img class="w-28 rounded-full" src="/img/dish-1.png" alt="placeholder+image">
+                <div class="flex-1 ">
+                    <h1 class="cart-item-name text-2xl md:text-xl">Pizza</h1>
+                   <h2 class="cart-item text-2xl md:text-xl"><span>tasty food</span></h2> 
+                </div>
+            <form action="" method="POST">
+                <input type="hidden" name="cartID" value="">
+                <select onchange="" name="quantity" class="mt-5 cart-item block appearance-none bg-white border  w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="spicy">spicy</option>
+                    <option value="oily">oily</option>
+                    <option value="sweet">sweet</option>
+                </select> 
+            </form> 
+            <form action="" method="POST">
+                <input type="hidden" name="cartID" value="">
+                <select onchange="" name="quantity" class="mt-5 cart-item block appearance-none bg-white border  w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select> 
+            </form> 
+                <span name="price" class="mt-5 cart-item-name font-bold text-xm md:text-xl">৳ 200</span>
+            </div>    
+        </div>
+        <!-- cart food item end -->    
+
+        <!-- cart food item start -->
+        <div class="food-list mr-8">
+            <div class="ml-10 container grid md:grid-cols-2 lg:grid-cols-5 flex items-center my-8">
+                <img class="w-28 rounded-full" src="/img/dish-1.png" alt="placeholder+image">
+                <div class="flex-1 ">
+                    <h1 class="cart-item-name text-2xl md:text-xl">Pizza</h1>
+                   <h2 class="cart-item text-2xl md:text-xl"><span>tasty food</span></h2> 
+                </div>
+            <form action="" method="POST">
+                <input type="hidden" name="cartID" value="">
+                <select onchange="" name="quantity" class="mt-5 cart-item block appearance-none bg-white border w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="spicy">spicy</option>
+                    <option value="oily">oily</option>
+                    <option value="sweet">sweet</option>
+                </select> 
+            </form> 
+            <form action="" method="POST">
+                <input type="hidden" name="cartID" value="">
+                <select onchange="" name="quantity" class="mt-5 cart-item block appearance-none bg-white border w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select> 
+            </form> 
+                <span name="price" class="mt-5 cart-item-name font-bold text-xm md:text-xl">৳ 200</span>
+            </div>    
+        </div>
+        <!-- cart food item end -->  
+        <hr>
+        <div class="text-right py-9 mr-8">
+            <div>
+                <span class="cart-item font-bold text-xm md:text-xl">Total Amount:</span>
+                <span class="cart-item-name font-bold text-xm md:text-xl">৳ 200</span>
+            </div>
+            
+            <div>
+                <form action="/orders" method="POST" class="mt-12" id="payment-form">
+                    <div class="relative w-1/2 ml-auto mb-4">
+                        <select id="paymentType" name="paymentType" class="cart-item block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                          <option value="cod">Cash on delivery</option>
+                          <option value="card">Pay with card</option>
+                        </select>
+
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </div>
+                    </div>
+                    <input 
+                    name="phone" class="cart-item border border-gray-400 p-2 w-1/2" type="text" placeholder="Contact">
+                   <div class="mt-4"> 
+                    <div id="card-element">
+                    <input 
+                    name="address" class="cart-item border border-gray-400 p-2 w-1/2" type="text" placeholder="Address">
+                   <div class="mt-4"> 
+                    <div id="card-element">
+                           
+                    </div>
+                    <button 
+                    class=" inline-block btn mt-10" type="submit">Order Now</button> 
+                   </div>
+                </form>
+            </div>
+            <!-- <a href="/login" class="inline-block btn mt-10">Login to continue</a> -->
+        </div> 
+    </div>
+    <!-- <div class="changeTo empty-cart py-20">
+        <div class="container1 mx-auto text-center">
+            <h1 class="heading py-8">Cart Empty 😭</h1>
+            <p class="sub-heading">You probably haven't ordered any food yet.<br>To order, go to the main page</p>
+            <img class="w-1/5 mx-auto mb-10" src="/img/cart.jpg" alt="empty-cart">
+    
+            <a href="/" class="btn mb-16">Go back</a>
+        </div>
+    </div>    -->
+</section>

@@ -1,0 +1,724 @@
+@import './variables';
+
+
+*{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    // text-decoration: none;
+    // outline: none; 
+    // border: none;
+    text-transform: capitalize;
+    transition: $transition-smooth;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+/*------------------
+header section start
+-------------------*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: $white;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: $box-shadow;
+}
+
+
+header .logo{
+    color: $black;
+    font-size: $heading-font-1;
+    font-weight: bolder;
+}
+
+header .logo i{
+    color: $green;
+}
+
+
+header .navbar a{
+    font-size: $heading-font-2;
+    border-radius: $menu-radius;
+    padding: 0.5rem 1.5rem;
+    color: $light-color;
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+    color: $white;
+    background: $green;
+}
+
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: $menu-radius;
+    height: $size;
+    line-height: $size;
+    width: $size;
+    text-align: center;
+    font-size: $heading-font-2;
+    color: $black;
+    border-radius: $border-radius;
+    background: $background;
+}
+
+
+header .icons i:hover,
+header .icons a:hover{
+    color: $white;
+    background: $green;
+    transform: rotate(360deg);
+}
+
+header .icons #menu-bars{
+    display: none;
+}
+
+#search-form{
+    position: fixed;
+    top:-110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1004;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+#search-form.active{
+    top: 0;
+}
+
+#search-form #search-box{
+    width: 50rem;
+    border-bottom: 0.1rem solid $white;
+    padding: 1rem 0;
+    color: $white;
+    font-size: 3rem;
+    text-transform: none;
+    background: none;   
+}
+
+#search-form #search-box:placeholder{
+    color: $background;
+}
+
+#search-form #search-box::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+#search-form  label{
+    color: $white;
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#search-form label:hover{
+    color: $green;
+}
+
+#search-form #close{
+    position: absolute;
+    color: $white;
+    cursor: pointer;
+    top: 2rem;
+    right: 3rem;
+    font-size: 5rem;
+}
+
+
+/*-----------
+section start
+-----------*/
+section{
+    padding: 2rem 9%;
+}
+
+section:nth-child(even){
+    background: $background;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: $heading-font-2;
+    color: $white;
+    border-radius: $menu-radius;
+    background: $black;
+    cursor: pointer;
+    padding: 0.8rem 3rem;
+}
+
+.btn:hover{
+    background: $green;
+    letter-spacing: 0.1rem;
+}
+/*----------------
+home section start
+-----------------*/ 
+.home .home-slider .slide{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:2rem; 
+    padding-top: 9rem;
+}
+
+.home .home-slider .slide .content{
+    flex:1 1 45rem;
+}
+
+.home .home-slider .slide .image{
+    flex:1 1 45rem;
+}
+
+.home .home-slider .slide .image img{
+    width: 100%;
+    height: 80vh;
+}
+
+.home .home-slider .slide .content span{
+    color:$green;
+    font-size: $heading-font-1
+}
+
+.home .home-slider .slide .content h3{
+    color:$black;
+    font-size: $items-font;
+}
+
+.home .home-slider .slide .content p{
+    color:$light-color;
+    font-size: 2.2rem;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.swiper-pagination-bullet-active{
+    background: $green;
+}
+
+/*----------------
+dishes section start
+-----------------*/
+.sub-heading{
+    text-align: center;
+    color: $green;
+    font-size: 2rem;
+    padding-top: 1rem;
+}
+
+.heading{
+    text-align: center;
+    color: $black;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.dishes .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 1.5rem;
+}
+
+.dishes .box-container .box{
+    padding: 2.5rem;
+    background: $white;
+    border-radius: $menu-radius;
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: $box-shadow;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.dishes .box-container .box .fa-heart,
+.dishes .box-container .box .fa-eye{
+    position: absolute;
+    top: 1.5rem;
+    background: $background;
+    border-radius: $border-radius;
+    height: $height;
+    width: $height;
+    line-height: $height;
+    font-size: 2rem;
+    color: $black;
+}
+
+.dishes .box-container .box .fa-heart:hover,
+.dishes .box-container .box .fa-eye:hover{
+    background: $green;
+    color: $white;
+}
+
+.dishes .box-container .box .fa-heart{
+    right: -15rem;   
+}
+
+.dishes .box-container .box .fa-eye{
+    left: -15rem;   
+}
+
+.dishes .box-container .box:hover .fa-heart{
+    right: 1.5rem;   
+}
+
+.dishes .box-container .box:hover .fa-eye{
+    left: 1.5rem;   
+}
+
+.dishes .box-container .box img{
+    height: 16rem;
+    margin: 1rem 0;
+}
+
+.dishes .box-container .box h3{
+    color: $black;
+    font-size: 2.5rem;
+}
+
+.dishes .box-container .box .stars{
+    padding: 1rem 0;  
+}
+
+.dishes .box-container .box .stars i{
+    font-size: $heading-font-2;  
+    color: $green;
+}
+
+.dishes .box-container .box span{
+    color: $green;
+    font-weight: bolder;
+    margin-right: 1rem;
+    font-size: $heading-font-1;
+}
+
+/*-----------------
+about section start
+------------------*/ 
+.about .row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.about .row .image{
+    flex: 1 1 45rem;
+}
+
+.about .row .image img{ 
+    width: 100%;
+}
+
+.about .row .content{ 
+    flex: 1 1 45rem;
+}
+
+.about .row .content h3{
+    color: $black;
+    font-size: 4rem;
+    padding: $menu-radius 0;
+}
+
+.about .row .content p{
+    color: $light-color;
+    font-size: 1.5rem;
+    padding: $menu-radius 0;
+    line-height: 2;
+}
+
+.about .row .content .icons-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: $menu-radius;
+    padding: 1rem 0;
+}
+
+.about .row .content .icons-container .icons{
+    background: $background;
+    border-radius: $menu-radius;
+    border: 1rem solid rgba(0, 0, 0, 0.2);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1 1 17rem;
+    padding: 1.5rem 1rem;
+}
+
+.about .row .content .icons-container .icons i{
+    font-size: $heading-font-1;
+    color: $green;
+}
+
+.about .row .content .icons-container .icons span{
+    font-size: 1.5rem;
+    color: $black;
+}
+
+/*----------------
+menu section start
+-----------------*/ 
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.menu .box-container .box{
+    background: $white;
+    border: 1rem solid rgba(0, 0, 0, 0.2);
+    border-radius: $menu-radius;
+    box-shadow: $box-shadow;
+}
+
+.menu .box-container .box .image{
+    height: 25rem;
+    width: 100%;
+    padding: 1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.menu .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.menu .box-container .box .image .fa-heart{
+    position: absolute;
+    top: $heading-font-1;
+    right: $heading-font-1;
+    height: $height;
+    width: $height;
+    line-height: $height;
+    text-align: center;
+    font-size: 2rem;
+    background: $white;
+    border-radius: $border-radius;
+    color: $black;
+}
+
+.menu .box-container .box .image .fa-heart:hover{
+    background: $green;
+    color: $white;
+}
+
+.menu .box-container .box .content{
+    padding: 2rem;
+    padding-top: 0;
+}
+
+.menu .box-container .box .content .stars{
+    padding-bottom: 1rem;
+}
+
+.menu .box-container .box .content .stars i{
+    font-size: $heading-font-2;
+    color: $green;
+}
+
+.menu .box-container .box .content h3{
+    color: $black;
+    font-size: $heading-font-1;
+}
+
+.menu .box-container .box .content p{
+    color: $light-color;
+    font-size: $heading-font-2;
+    padding: $menu-radius 0;
+    line-height: 1.5;
+}
+
+.menu .box-container .box .content .price{
+    color: $green;
+    margin-left: 1rem;
+    font-size: $heading-font-1;
+}
+
+/*------------------
+review section start
+-------------------*/ 
+.review .slide{
+    padding: 2rem;
+    box-shadow: $box-shadow;
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+    border-radius: $menu-radius;
+    position: relative;
+}
+
+.review .slide .fa-quote-right{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 6rem;
+    color: #ccc;
+}
+
+.review .slide .user{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding-bottom: 1.5rem;
+}
+
+.review .slide .user img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: $border-radius;
+    object-fit: cover;
+}
+
+.review .slide .user h3{
+    color: $black;
+    font-size: 2rem;
+    padding-bottom: $menu-radius;
+}
+
+.review .slide .user i{
+    font-size: 1.3rem;
+    color: $green;
+}
+
+.review .slide p{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: $light-color;
+}
+
+/*----------------------
+suggestion section start
+-----------------------*/ 
+.suggestion form{
+    max-width: 90rem;
+    border-radius: $menu-radius;
+    box-shadow: $box-shadow;
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+    background: $white;
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+.suggestion form .inputBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.suggestion form .inputBox .input{
+    width: 49%;
+}
+
+.suggestion form .inputBox .input span{
+    display: block;
+    padding: $menu-radius 0;
+    font-size: 1.5rem;
+    color: $light-color;
+}
+
+.suggestion form .inputBox .input input,
+.suggestion form .inputBox .input textarea{
+    background: $background;
+    border-radius: $menu-radius;
+    padding: 1rem;
+    font-size: $heading-font-2;
+    color: $black;
+    text-transform: none;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.suggestion form .inputBox .input input:focus,
+.suggestion form .inputBox .input textarea:focus{
+    border: 0.1rem solid $green;
+
+}
+
+.suggestion form .inputBox .input textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.suggestion form .btn{
+    margin-top: 0;
+}
+
+/*------------------
+footer section start
+------------------*/
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3{
+    padding: $menu-radius 0;
+    font-size: $heading-font-1;
+    color: $black;
+}
+
+.footer .box-container .box a{
+    display: block;
+    padding: $menu-radius 0;
+    font-size: $heading-font-2;
+    color: $light-color;
+}
+
+.footer .box-container .box a:hover{
+    color: $green;
+    text-decoration: underline;
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    font-size: $heading-font-2;
+    color: $black;
+    padding: $menu-radius;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer .credit span{
+    color: $green;
+}
+
+/*---------------
+loader part start
+----------------*/ 
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-container img{
+    width: 35rem;
+}
+
+.loader-container.fade-out{
+    top: 110%;
+    opacity: 0;
+}
+
+/*----------------
+cart section start
+-----------------*/ 
+.cart-item-name{
+    font-size: $heading-font-1;
+    color: $green;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.cart-item{
+    font-size: $heading-font-2;
+    color: $black;
+}
+
+/*-----------------
+media queries start 
+------------------*/
+@media (max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    header{
+        padding: 1rem 2rem;
+    }
+
+    section{
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width:768px){
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: $white;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background: $background;
+    }
+
+    #search-form #search-box{
+        width: 80%;
+        margin: 0 1rem;
+    }
+
+    .home .home-slider .slide .content h3{
+        font-size: 5rem;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+
+    .dishes .box-container .box img{
+        height: auto;
+        width: 100%;
+    }
+    
+    .suggestion form .inputBox .input{
+        width: 100%;
+    }
+}
+/*---------------
+media queries end 
+----------------*/
+
+
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/app.css">
+    
+    <!-- swiper link -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Food Service</title>
+</head>
+<body>
+    <!-- header section start -->
+    <header>
+        <a href="/" class="logo"><i class="fas fa-utensils"></i>Food</a>
+        <nav class="navbar">
+            <a class="active" href="#home">home</a>
+            <a href="#dishes">dishes</a>
+            <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            <a href="#review">review</a>
+            <a href="#suggestion">suggestion</a>
+        </nav>
+
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+            <a href="#" class="fas fa-heart"></a>
+            <a href="/cart" class="fas fa-shopping-cart"></a>
+        </div>
+    </header>
+    <!-- header section end -->
+
+    <!-- search form start -->
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+    <!-- search form end -->
+    <%- body %>
+    <!-- body section start -->
+
+    <!-- body section end -->
+    <!-- footer section start -->
+    <section class="footer">
+
+        <div class="box-container">
+    
+            <div class="box">
+                <h3>locations</h3>
+                <a href="#">mirpur</a>
+                <a href="#">mohammadpur</a>
+                <a href="#">banani</a>
+                <a href="#">dhanmondi</a>
+                <a href="#">gulsan</a>
+                <a href="#">gazipur</a>
+            </div>
+    
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#home">home</a>
+                <a href="#dishes">dishes</a>
+                <a href="#about">about</a>
+                <a href="#menu">menu</a>
+                <a href="#review">reivew</a>
+                <a href="#suggestion">suggestion</a>
+            </div>
+    
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#">+880 1780 139086</a>
+                <a href="#">+880 1537 220691</a>
+                <a href="#">arafat.kamal.cse@ulab.edu.bd</a>
+                <a href="#">arafat.kamal@gmail.com</a>
+                <a href="#">mirpur - 10, dhaka - 1216, bangladesh</a>
+            </div>
+    
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="https://www.facebook.com/123.Arafat.kamal">facebook</a>
+                <a href="#">twitter</a>
+                <a href="#">instagram</a>
+                <a href="#">linkedin</a>
+            </div>
+    
+        </div>
+    
+        <div class="credit"> copyright @ 2021 by <span>arafat kamal chowdhury</span> </div>
+    
+    </section>
+    <!-- footer section end -->
+
+    <!-- loader part start -->
+    <div class="loader-container">
+        <img src="/img/loader.gif" alt="">
+    </div>
+    <!-- loader part end -->
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
