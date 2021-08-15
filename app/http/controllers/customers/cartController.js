@@ -26,14 +26,11 @@ function cartController(){
              
 
             cart.totalQty = cart.totalQty + 1
-            console.log(req.body.price)
             cart.totalPrice = cart.totalPrice + req.body.price
-            console.log(cart.totalQty + '\n' + cart.totalPrice)
         } else{
             cart.menus[req.body._id].qty = cart.menus[req.body._id].qty + 1
             cart.totalQty = cart.totalQty + 1
             cart.totalPrice = cart.totalPrice + req.body.price
-            console.log(cart.totalQty + '\n' + cart.totalPrice)
         }
        return res.json({totalQty: req.session.cart.totalQty})
     }
