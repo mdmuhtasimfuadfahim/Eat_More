@@ -3,47 +3,24 @@
     <section class="home" id="home">
         <div class="swiper-container home-slider">
             <div class="swiper-wrapper wrapper">
+                <% menus.forEach(function(menus) { %>
+                <% if(menus.typeName === "home-dish") { %>
                 <!-- single slider start -->
                 <div class="swiper-slide slide">
                     <div class="content">
                         <span>our special dish</span>
-                        <h3>spicy noodles</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
-                        <a href="#" class="btn">order now</a>
+                        <h3><%= menus.foodName %></h3>
+                        <p><%= menus.description %></p>
+                        <h4> ৳ <%= menus.price %></h4>
+                        <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Order Now</a>
                     </div>
                     <div class="image">
-                        <img src="/img/home-img-1.png" alt="">
+                        <img src="/img/<%= menus.image %>" alt="">
                     </div>
                 </div>
                 <!-- single slider end -->
-    
-                <!-- single slider start -->
-                <div class="swiper-slide slide">
-                    <div class="content">
-                        <span>our special dish</span>
-                        <h3>fried chicken</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
-                        <a href="#" class="btn">order now</a>
-                    </div>
-                    <div class="image">
-                        <img src="/img/home-img-2.png" alt="">
-                    </div>
-                </div>
-                <!-- single slider end -->
-                
-                <!-- single slider start -->
-                <div class="swiper-slide slide">
-                    <div class="content">
-                        <span>our special dish</span>
-                        <h3>hot pizza</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit natus dolor cumque?</p>
-                        <a href="#" class="btn">order now</a>
-                    </div>
-                    <div class="image">
-                        <img src="/img/home-img-3.png" alt="">
-                    </div>
-                </div>
-                <!-- single slider end -->
+                <% } %>
+                <% }) %>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -56,13 +33,14 @@
         <h1 class="heading"> popular dishes </h1>
 
         <div class="box-container">
-
+            <% menus.forEach(function(menus) { %>
+            <% if(menus.typeName === "dishes") {%>
             <!-- single food start -->
             <div class="box">
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-eye"></a>
-                <img src="/img/dish-1.png" alt="">
-                <h3>tasty food</h3>
+                <img src="/img/<%= menus.image %>" alt="">
+                <h3><%= menus.foodName %></h3>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -70,100 +48,12 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <span>15.99 Tk</span>
-                <a href="#" class="btn">add to cart</a>
+                <span> ৳ <%= menus.price %></span>
+                <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
             </div>
             <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-                <img src="/img/dish-2.png" alt="">
-                <h3>tasty food</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <span>15.99 Tk</span>
-                <a href="#" class="btn">add to cart</a>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-                <img src="/img/dish-3.png" alt="">
-                <h3>tasty food</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <span>15.99 Tk</span>
-                <a href="#" class="btn">add to cart</a>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-                <img src="/img/dish-4.png" alt="">
-                <h3>tasty food</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <span>15.99 Tk</span>
-                <a href="#" class="btn">add to cart</a>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-                <img src="/img/dish-5.png" alt="">
-                <h3>tasty food</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <span>150 Tk</span>
-                <a href="#" class="btn">add to cart</a>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" class="fas fa-eye"></a>
-                <img src="/img/dish-6.png" alt="">
-                <h3>tasty food</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <span>150 Tk</span>
-                <a href="#" class="btn">add to cart</a>
-            </div>
-            <!-- single food end -->
+            <% } %>
+            <% }) %>
         </div>
     </section>
     <!-- dishes section end -->
@@ -208,11 +98,12 @@
         <h1 class="heading"> always special </h1>
 
         <div class="box-container">
-
+           <% menus.forEach(function(menus){ %>
+            <% if(menus.typeName === "menu"){ %>
             <!-- single food start -->
             <div class="box">
                 <div class="image">
-                    <img src="/img/menu-1.jpg" alt="">
+                    <img src="/img/<%= menus.image %>" alt="">
                     <a href="#" class="fas fa-heart"></a>
                 </div>
                 <div class="content">
@@ -223,189 +114,15 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <h3>delicious food</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">add to cart</a>
-                    <span class="price">120 Tk</span>
+                    <h3><%= menus.foodName %></h3>
+                    <p><%= menus.description %>.</p>
+                    <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                    <span class="price"> ৳ <%= menus.price %></span>
                 </div>
             </div>
             <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <div class="image">
-                    <img src="/img/menu-2.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>delicious food</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">add to cart</a>
-                    <span class="price">120 Tk</span>
-                </div>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <div class="image">
-                    <img src="/img/menu-3.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>delicious food</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">add to cart</a>
-                    <span class="price">120 Tk</span>
-                </div>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <div class="image">
-                    <img src="/img/menu-4.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>delicious food</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">add to cart</a>
-                    <span class="price">120 Tk</span>
-                </div>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <div class="image">
-                    <img src="/img/menu-5.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>delicious food</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">add to cart</a>
-                    <span class="price">120 Tk</span>
-                </div>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <div class="image">
-                    <img src="/img/menu-6.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>delicious food</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">add to cart</a>
-                    <span class="price">120 Tk</span>
-                </div>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <div class="image">
-                    <img src="/img/menu-7.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>delicious food</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">add to cart</a>
-                    <span class="price">120 Tk</span>
-                </div>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <div class="image">
-                    <img src="/img/menu-8.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>delicious food</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">add to cart</a>
-                    <span class="price">120 Tk</span>
-                </div>
-            </div>
-            <!-- single food end -->
-
-            <!-- single food start -->
-            <div class="box">
-                <div class="image">
-                    <img src="/img/menu-9.jpg" alt="">
-                    <a href="#" class="fas fa-heart"></a>
-                </div>
-                <div class="content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3>delicious food</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi, accusantium.</p>
-                    <a href="#" class="btn">add to cart</a>
-                    <span class="price">120 Tk</span>
-                </div>
-            </div>
-            <!-- single food end -->
+            <% } %>
+            <% }) %>
         </div>
     </section>
     <!-- menu section end -->

@@ -1,0 +1,136 @@
+[{
+    "_id": {
+      "$oid": "5weew51f73938c174fd736ee"
+    },
+    "image": "dish-1.png",
+    "typeName": "dishes",
+    "foodName": "Smokin' Burger",
+    "price": "250",
+    "description": "This is our one of best dishes"
+  },{
+    "_id": {
+      "$oid": "5exe6671a27a66807cf2beb2"
+    },
+    "image": "dish-2.png",
+    "typeName": "dishes",
+    "foodName": "Chicken Nuggets",
+    "price": "300",
+    "description": "This is our one of best dishes"
+  },{
+    "_id": {
+      "$oid": "5eel4671a27a66807cf2bea3"
+    },
+    "image": "dish-3.png",
+    "typeName": "dishes",
+    "foodName": "Chicken Curry",
+    "price": "220",
+    "description": "This is our one of best dishes"
+  },{
+    "_id": {
+      "$oid": "5eee66a5a17a6c807cf2rea5"
+    },
+    "image": "dish-5.png",
+    "typeName": "dishes",
+    "foodName": "Dipsy Do's Softserve",
+    "price": "180",
+    "description": "This is our one of best dishes "
+  },{
+    "_id": {
+      "$oid": "53ad46b4a27a66807cf2bve6"
+    },
+    "image": "dish-4.jpg",
+    "typeName": "dishes",
+    "foodName": "Detroit Pizza",
+    "price": "820",
+    "description": "This is our one of best dishes"
+  },{
+    "_id": {
+      "$oid": "5e4e66cfa2c166807cf2bea7"
+    },
+    "image": "dish-6.jfif",
+    "typeName": "dishes",
+    "foodName": "Chicken Fry",
+    "price": "280",
+    "description": "This is our one of best dishes "
+  },{
+    "_id": {
+      "$oid": "5e5e66eea26a66807cf2bea8"
+    },
+    "image": "menu-1.jpg",
+    "typeName": "menu",
+    "foodName": "St. Louis Pizza",
+    "price": "1020",
+    "description": "This is our best pizza, we provide a very good quality of food"
+  },{
+    "_id": {
+      "$oid": "5eee6727a27a66807cf2bea9"
+    },
+    "image": "menu-2.jpg",
+    "typeName": "menu",
+    "foodName": "Burger Ferguson",
+    "price": "320",
+    "description": "This is our best burger, we provide a very good quality of food"
+  },{
+    "_id": {
+      "$oid": "5eee6737a47a66807cf1cea9"
+    },
+    "image": "menu-3.jpg",
+    "typeName": "menu",
+    "foodName": "Bagel and cream cheese",
+    "price": "430",
+    "description": "This is our best bread and cheese, we provide a very good quality of food"
+  },{
+    "_id": {
+      "$oid": "5e2e2717a27a66807cf2bea9"
+    },
+    "image": "menu-4.jpg",
+    "typeName": "menu",
+    "foodName": "Hokey Pokey Ice Cream Parlor",
+    "price": "499",
+    "description": "This is our best ice cream, we provide a very good quality of food"
+  },{
+    "_id": {
+      "$oid": "5qe36727a27a66807cf2bca0"
+    },
+    "image": "menu-5.jpg",
+    "typeName": "menu",
+    "foodName": "Taco Bell Chalupa Supreme",
+    "price": "350",
+    "description": "This is our best chalpas, we provide a very good quality of food"
+  },{
+    "_id": {
+      "$oid": "5eae3717a27b66807cf2bea2"
+    },
+    "image": "menu-6.jpg",
+    "typeName": "menu",
+    "foodName": "The Vanilla Bean Creamery",
+    "price": "430",
+    "description": "This is our best ice cream, we provide a very good quality of food"
+  },{
+    "_id": {
+      "$oid": "5ee5a717a27a66807cf2bea9"
+    },
+    "image": "menu-7.jpg",
+    "typeName": "menu",
+    "foodName": "Cantaloupe Juice",
+    "price": "210",
+    "description": "This is our best juice, we provide a very good quality of food"
+  },{
+    "_id": {
+      "$oid": "56ee6717a27a66807cf2bea9"
+    },
+    "image": "menu-8.jpg",
+    "typeName": "menu",
+    "foodName": "Panera Broccoli",
+    "price": "400",
+    "description": "This is our best food, we provide a very good quality of food"
+  },{
+    "_id": {
+      "$oid": "5eee6717a27a6m00zcf2bea9"
+    },
+    "image": "menu-9.jpg",
+    "typeName": "menu",
+    "foodName": "Beetroot Juice",
+    "price": "230",
+    "description": "This is our best juice, we provide a very good quality of food"
+  }]

@@ -1,3 +1,6 @@
+
+import { addToCart } from './addToCart'
+
 let menu = document.querySelector('#menu-bars');
 let navbar = document.querySelector('.navbar');
 // let footer = document.querySelector('.footer');
@@ -89,3 +92,6 @@ function fadeOut(){
 }
 
 window.onload = fadeOut;
+
+/*----------call addToCart.js file---------*/
+addToCart() 

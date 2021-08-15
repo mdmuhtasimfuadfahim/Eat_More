@@ -19,7 +19,7 @@
 <body>
     <!-- header section start -->
     <header>
-        <a href="/" class="logo"><i class="fas fa-utensils"></i>Food</a>
+        <a href="/" class="logo"><i class="fas fa-utensils"></i>Eat More</a>
         <nav class="navbar">
             <a class="active" href="#home">home</a>
             <a href="#dishes">dishes</a>
@@ -35,7 +35,9 @@
             <a href="/registration"><i class="fas fa-user-plus"></i></a>
             <i class="fas fa-search" id="search-icon"></i>
             <a href="/" class="fas fa-heart"></a>
-            <a href="/cart" class="fas fa-shopping-cart"></a>
+            <a href="/cart" class="fas fa-shopping-cart">
+                <span id="cartCounter"><%= session.cart ? session.cart.totalQty : '' %></span>
+            </a>
         </div>
     </header>
     <!-- header section end -->

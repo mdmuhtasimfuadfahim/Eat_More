@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const app = express()
 const ejs = require('ejs')
@@ -6,12 +8,59 @@ const Emitter = require('events')
 const morgan = require('morgan')
 const expressLayout = require('express-ejs-layouts')
 const PORT = process.env.PORT || 4000
+const session = require('express-session')
+const flash = require('express-flash')
+const MongoDbStore = require('connect-mongo')
+
+/*-----------------
+database connection
+------------------*/ 
+const connectDB = require('./app/config/db')
+const { connection } = require('mongoose')
+connectDB()
+
+
+/*-----------
+session store
+------------*/ 
+const mongodbstore = new MongoDbStore({
+    mongoUrl: process.env.MONGO_CONNECTION_URL,
+    dbName: "foodShop",
+    stringify: false
+})
+
+
+/*------------
+session config
+-------------*/ 
+app.use(session({
+    secret: process.env.COOKIE_SECRET,
+    resave: false,
+    store: mongodbstore,
+    saveUninitialized: false,
+    cookie: { maxAge: 1000 * 60 * 60 * 5} /*----- 5 hours-------*/
+}))
+
+
+app.use(flash())
 
 
 /*-----
 assets
 -----*/
 app.use(express.static('public'))
+app.use(express.json())
+
+
+/*-----------------
+golbal  middleware
+-----------------*/ 
+app.use((req, res, next)=>{
+    res.locals.session = req.session
+    next()
+})
+
+
 /*------------------
 set template engine
 ------------------*/
@@ -19,22 +68,10 @@ app.use(expressLayout)
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs')
 
-app.get('/', (req, res) =>{
-    res.render('home')
-})
-
-app.get('/cart', (req, res) =>{
-    res.render('customers/cart')
-})
-
-app.get('/registration', (req, res) =>{
-    res.render('auth/registration')
-})
-
-app.get('/login', (req, res) =>{
-    res.render('auth/login')
-})
-
+/*-------------
+routing control
+--------------*/ 
+require('./routes/web')(app)
 
 
 /*-----------

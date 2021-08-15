@@ -1,4 +1,6 @@
 @import './variables';
+@import'~noty/src/noty.scss';
+@import'~noty/src/themes/mint.scss';
 
 
 *{
@@ -19,6 +21,18 @@ html{
     scroll-padding-top: 5.5rem;
     scroll-behavior: smooth;
 }
+
+/*---------------------
+noty notification style
+----------------------*/ 
+.noty_theme__mint{
+    border-radius: 0.5rem!important;
+    padding-left: 8px!important;
+    background: $green!important;
+    color: $white!important;
+    font-size: $heading-font-2!important;
+}
+
 
 /*------------------
 header section start
@@ -211,6 +225,14 @@ home section start
     line-height: 1.5;
 }
 
+.home .home-slider .slide .content h4{
+    color: $green;
+    font-size: 2.2rem;
+    padding: 0.5rem 0;
+    line-height: 1.5;
+    margin-right: 10px;
+}
+
 .swiper-pagination-bullet-active{
     background: $green;
 }
@@ -294,6 +316,7 @@ dishes section start
     color: $black;
     font-size: 2.5rem;
 }
+
 
 .dishes .box-container .box .stars{
     padding: 1rem 0;  
@@ -636,10 +659,11 @@ loader part start
 cart section start
 -----------------*/ 
 .cart-item-name{
-    font-size: $heading-font-1;
+    font-size: 1.8rem;
     color: $green;
     line-height: 1.5rem;
     margin-bottom: 10px;
+    font-weight: bolder;
 }
 
 .cart-item{
@@ -652,7 +676,8 @@ cart section start
 login & registration section start
 --------------------------------*/ 
 .registration,
-.login{
+.login,
+.cart{
     margin-top: 40px;
     margin-bottom: 40px;
 }

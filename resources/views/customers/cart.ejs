@@ -1,18 +1,21 @@
 
-<section class="cart py-15">
+<section class="cart">
+    <% if(session.cart) { %>
     <div class ="mx-auto py-2 xl:w">
 
         <div class ="flex items-center border-b border-gray-300 pb-4">
             <h1 class="fas fa-shopping-cart heading py-16 mt-20">Order Summary</h1>
         </div>
-
+        
+        
+        <% for(let food of Object.values(session.cart.menus)) { %>
         <!-- cart food item start -->
         <div class="food-list mr-8">
-            <div class="ml-10 container grid md:grid-cols-2 lg:grid-cols-5 flex items-center my-8">
-                <img class="w-28 rounded-full" src="/img/dish-1.png" alt="placeholder+image">
+            <div class="ml-10 container grid md:grid-cols-2 lg:grid-cols-6 flex items-center my-8">
+                <img class="w-28 rounded-full" src="/img/<%= food.menus.image %>" alt="placeholder+image">
                 <div class="flex-1 ">
-                    <h1 class="cart-item-name text-2xl md:text-xl">Pizza</h1>
-                   <h2 class="cart-item text-2xl md:text-xl"><span>tasty food</span></h2> 
+                    <h1 class="cart-item-name text-2xl md:text-xl inline-block"><%= food.menus.foodName %></h1>
+                   <h2 class="cart-item text-2xl md:text-xl"><span>eat more</span></h2> 
                 </div>
             <form action="" method="POST">
                 <input type="hidden" name="cartID" value="">
@@ -30,44 +33,18 @@
                     <option value="6">6</option>
                 </select> 
             </form> 
-                <span name="price" class="mt-5 cart-item-name font-bold text-xm md:text-xl">৳ 200</span>
+                <span class="mt-5 cart-item font-bold text-xm md:text-xl"><%= food.qty %> Pcs</span>
+                <span name="price" class="mt-5 cart-item-name font-bold text-xm md:text-xl">৳ <%= food.menus.price * food.qty %></span>
             </div>    
         </div>
-        <!-- cart food item end -->    
+        <!-- cart food item end -->   
+        <% } %> 
 
-        <!-- cart food item start -->
-        <div class="food-list mr-8">
-            <div class="ml-10 container grid md:grid-cols-2 lg:grid-cols-5 flex items-center my-8">
-                <img class="w-28 rounded-full" src="/img/dish-1.png" alt="placeholder+image">
-                <div class="flex-1 ">
-                    <h1 class="cart-item-name text-2xl md:text-xl">Pizza</h1>
-                   <h2 class="cart-item text-2xl md:text-xl"><span>tasty food</span></h2> 
-                </div>
-            <form action="" method="POST">
-                <input type="hidden" name="cartID" value="">
-                <select onchange="" name="quantity" class="mt-5 cart-item block appearance-none bg-white border w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="spicy">spicy</option>
-                    <option value="oily">oily</option>
-                    <option value="sweet">sweet</option>
-                </select> 
-            </form> 
-            <form action="" method="POST">
-                <input type="hidden" name="cartID" value="">
-                <select onchange="" name="quantity" class="mt-5 cart-item block appearance-none bg-white border w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                </select> 
-            </form> 
-                <span name="price" class="mt-5 cart-item-name font-bold text-xm md:text-xl">৳ 200</span>
-            </div>    
-        </div>
-        <!-- cart food item end -->  
         <hr>
         <div class="text-right py-9 mr-8">
             <div>
                 <span class="cart-item font-bold text-xm md:text-xl">Total Amount:</span>
-                <span class="cart-item-name font-bold text-xm md:text-xl">৳ 200</span>
+                <span class="cart-item-name font-bold text-xm md:text-xl">৳ <%= session.cart.totalPrice %></span>
             </div>
             
             <div>
@@ -98,7 +75,8 @@
             <!-- <a href="/login" class="inline-block btn mt-10">Login to continue</a> -->
         </div> 
     </div>
-    <!-- <div class="changeTo empty-cart py-20">
+    <% } else { %>
+    <div class="changeTo empty-cart py-20">
         <div class="container1 mx-auto text-center">
             <h1 class="heading py-8">Cart Empty 😭</h1>
             <p class="sub-heading">You probably haven't ordered any food yet.<br>To order, go to the main page</p>
@@ -106,5 +84,6 @@
     
             <a href="/" class="btn mb-16">Go back</a>
         </div>
-    </div>    -->
+    </div>   
+    <% } %>
 </section>
