@@ -8,7 +8,7 @@
 /***/ (() => {
 
 var menu = document.querySelector('#menu-bars');
-var navbar = document.querySelector('.navbar');
+var navbar = document.querySelector('.navbar'); // let footer = document.querySelector('.footer');
 
 menu.onclick = function () {
   menu.classList.toggle('fa-times');
@@ -29,7 +29,8 @@ window.onscroll = function () {
 
     if (top >= offset && top < offset + height) {
       navLinks.forEach(function (links) {
-        links.classList.remove('active');
+        links.classList.remove('active'); // footer.classList.remove('acitve');
+
         document.querySelector('header .navbar a[href*=' + id + ']').classList.add('active');
       });
     }
@@ -88,7 +89,7 @@ function loader() {
 }
 
 function fadeOut() {
-  setInterval(loader, 3000);
+  setInterval(loader, 2000);
 }
 
 window.onload = fadeOut;

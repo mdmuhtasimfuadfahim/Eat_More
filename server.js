@@ -27,6 +27,15 @@ app.get('/cart', (req, res) =>{
     res.render('customers/cart')
 })
 
+app.get('/registration', (req, res) =>{
+    res.render('auth/registration')
+})
+
+app.get('/login', (req, res) =>{
+    res.render('auth/login')
+})
+
+
 
 /*-----------
 event emitter

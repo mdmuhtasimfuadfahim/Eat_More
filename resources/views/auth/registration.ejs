@@ -1,0 +1,45 @@
+    <!-- registration section start -->
+    <section class="registration py-20" >
+
+        <h3 class="sub-heading"> register page </h3>
+        <h1 class="heading"> do your register </h1>
+    
+        <form action="/registration" method="POST" enctype="multipart/form-data">
+    
+            <div class="inputBox">
+                <div class="input">
+                    <label for="username">your name</label>
+                    <input name="name" id="username" type="text" placeholder="enter your name">
+                </div>
+                <div class="input">
+                    <label for="email">your email</label>
+                    <input id="email" name="email" type="email" placeholder="enter your email">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <label for="phone">your contact number</label>
+                    <input name="phone" type="phone" placeholder="enter your contact number">
+                </div>
+                <div class="input">
+                    <label for="address">your address</label>
+                    <input id="address" name="address" type="test" placeholder="enter your present address">
+                </div>
+            </div>
+            <div class="inputBox">
+                <div class="input">
+                    <label for="image">upload your recent picture</label>
+                    <input name="image" id="image" type="file" placeholder="upload picture">
+                </div>
+                <div class="input">
+                    <label for="password">your password</label>
+                    <input name="password" id="password" type="password" placeholder="********************">
+                </div>
+            </div>
+    
+            <button type="submit" value="" class="btn">registration</button>
+            <a href="/login">Already have account?</a>
+        </form>
+    
+    </section>
+    <!-- registration section end -->

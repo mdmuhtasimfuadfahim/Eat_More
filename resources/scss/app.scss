@@ -647,6 +647,87 @@ cart section start
     color: $black;
 }
 
+
+/*-------------------------------
+login & registration section start
+--------------------------------*/ 
+.registration,
+.login{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.registration form,
+.login form{
+    max-width: 90rem;
+    border-radius: $menu-radius;
+    box-shadow: $box-shadow;
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+    background: $white;
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+.registration form .inputBox,
+.login form .inputBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.registration form .inputBox .input,
+.login form .inputBox .input{
+    width: 49%;
+}
+
+.registration form .inputBox .input label,
+.login form .inputBox .input label{
+    display: block;
+    padding: $menu-radius 0;
+    font-size: 1.5rem;
+    color: $light-color;
+}
+
+.registration form .inputBox .input input,
+.login form .inputBox .input input,
+.registration form .inputBox .input textarea,
+.login form .inputBox .input textarea{
+    background: $background;
+    border-radius: $menu-radius;
+    padding: 1rem;
+    font-size: $heading-font-2;
+    color: $black;
+    text-transform: none;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.registration form .inputBox .input input:focus,
+.login form .inputBox .input input:focus,
+.registration form .inputBox .input textarea:focus,
+.loginform .inputBox .input textarea:focus{
+    border: 0.1rem solid $green;
+
+}
+
+.registration form .inputBox .input textarea,
+.login form .inputBox .input textarea{
+    height: 20rem;
+    resize: none;
+}
+
+.registration form .btn,
+.login form .btn{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.registration form a,
+.login form a{
+    font-size: $heading-font-2;
+    margin-left: 10px;
+    color: $black;
+}
+
+
 /*-----------------
 media queries start 
 ------------------*/
@@ -713,6 +794,10 @@ media queries start
     }
     
     .suggestion form .inputBox .input{
+        width: 100%;
+    }
+     
+    .registration form .inputBox .input{
         width: 100%;
     }
 }
