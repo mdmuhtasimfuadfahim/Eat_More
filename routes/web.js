@@ -14,6 +14,8 @@ function initRoutes(app){
     /*-----------auth controller routes--------*/
     app.get('/registration', authController().registration),
     app.get('/login', authController().login)
+    app.post('/registration', authController().postRegistration)
+
 
      
     

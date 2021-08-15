@@ -6,30 +6,33 @@
     
         <form action="/registration" method="POST" enctype="multipart/form-data">
     
+            <% if(messages.error) { %>
+            <span class="text-red-500 text-2xl font-bold"><%= messages.error %></span>
+            <% } %>
             <div class="inputBox">
                 <div class="input">
                     <label for="username">your name</label>
-                    <input name="name" id="username" type="text" placeholder="enter your name">
+                    <input name="name" id="username" value="<%= messages.name %>" type="text" placeholder="enter your name">
                 </div>
                 <div class="input">
                     <label for="email">your email</label>
-                    <input id="email" name="email" type="email" placeholder="enter your email">
+                    <input id="email" name="email" value="<%= messages.email %>" type="email" placeholder="enter your email">
                 </div>
             </div>
             <div class="inputBox">
                 <div class="input">
                     <label for="phone">your contact number</label>
-                    <input name="phone" type="phone" placeholder="enter your contact number">
+                    <input name="phone" type="phone" value="<%= messages.phone %>" type="phone" placeholder="enter your contact number">
                 </div>
                 <div class="input">
                     <label for="address">your address</label>
-                    <input id="address" name="address" type="test" placeholder="enter your present address">
+                    <input id="address" name="address" value="<%= messages.address %>" type="text" placeholder="enter your present address">
                 </div>
             </div>
             <div class="inputBox">
                 <div class="input">
                     <label for="image">upload your recent picture</label>
-                    <input name="image" id="image" type="file" placeholder="upload picture">
+                    <input name="image" id="image" type="file">
                 </div>
                 <div class="input">
                     <label for="password">your password</label>
@@ -37,7 +40,7 @@
                 </div>
             </div>
     
-            <button type="submit" value="" class="btn">Registration</button>
+            <button type="submit" class="btn">Registration</button>
             <a href="/login">Already have account?</a>
         </form>
     

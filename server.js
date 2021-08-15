@@ -12,6 +12,21 @@ const session = require('express-session')
 const flash = require('express-flash')
 const MongoDbStore = require('connect-mongo')
 
+
+
+/*-----------
+event emitter
+------------*/
+const eventEmitter = new Emitter()
+app.set('eventEmitter', eventEmitter)
+
+
+/*----------
+log requests
+-----------*/
+app.use(morgan('tiny'))
+
+
 /*-----------------
 database connection
 ------------------*/ 
@@ -49,6 +64,7 @@ app.use(flash())
 assets
 -----*/
 app.use(express.static('public'))
+app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
 
 
@@ -72,18 +88,6 @@ app.set('view engine', 'ejs')
 routing control
 --------------*/ 
 require('./routes/web')(app)
-
-
-/*-----------
-event emitter
-------------*/
-const eventEmitter = new Emitter()
-app.set('eventEmitter', eventEmitter)
-
-/*----------
-log requests
------------*/
-app.use(morgan('tiny'))
 
 
 app.listen(PORT, () =>{
