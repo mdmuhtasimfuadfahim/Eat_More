@@ -1029,6 +1029,46 @@ login & registration section start
   color: #192a56;
 }
 
+/*----------------------
+order page section start
+----------------------*/
+.orders {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.orders .cutomer-order-container {
+  margin-top: 40px;
+}
+
+.orders .cutomer-order-container h1 {
+  font-size: 2.5rem;
+  color: #192a56;
+  font-weight: bolder;
+  line-height: 1.5rem;
+  margin-bottom: 7px;
+}
+
+.orders .customer-order-container table {
+  font-size: 1.7rem;
+  line-height: 1.5rem;
+}
+
+.orders .customer-order-container table thead tr {
+  color: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.order-id {
+  color: #27ae60;
+  font-size: 1.7rem;
+  margin-bottom: 3px;
+}
+
+.order-info {
+  color: #666;
+  font-size: 1.7rem;
+}
+
 /*-----------------
 media queries start 
 ------------------*/

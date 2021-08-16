@@ -47,6 +47,7 @@
                 <span class="cart-item-name font-bold text-xm md:text-xl">৳ <%= session.cart.totalPrice %></span>
             </div>
             
+            <% if(user) { %>
             <div>
                 <form action="/orders" method="POST" class="mt-12" id="payment-form">
                     <div class="relative w-1/2 ml-auto mb-4">
@@ -72,7 +73,9 @@
                    </div>
                 </form>
             </div>
-            <!-- <a href="/login" class="inline-block btn mt-10">Login to continue</a> -->
+            <% } else { %>
+            <a href="/login" class="inline-block btn mt-10">Login to continue</a>
+            <% } %>
         </div> 
     </div>
     <% } else { %>

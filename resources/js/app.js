@@ -95,3 +95,11 @@ window.onload = fadeOut;
 
 /*----------call addToCart.js file---------*/
 addToCart() 
+
+/*----------remove order success alert---------*/
+const alertMsg = document.querySelector('#success-alert')
+if(alertMsg){
+  setTimeout( () =>{
+    alertMsg.remove()
+  }, 2000)
+}

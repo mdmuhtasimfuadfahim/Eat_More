@@ -1991,6 +1991,15 @@ window.onload = fadeOut;
 /*----------call addToCart.js file---------*/
 
 (0,_addToCart__WEBPACK_IMPORTED_MODULE_0__.addToCart)();
+/*----------remove order success alert---------*/
+
+var alertMsg = document.querySelector('#success-alert');
+
+if (alertMsg) {
+  setTimeout(function () {
+    alertMsg.remove();
+  }, 2000);
+}
 
 /***/ }),
 

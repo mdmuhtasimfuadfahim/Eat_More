@@ -753,6 +753,51 @@ login & registration section start
 }
 
 
+/*----------------------
+order page section start
+----------------------*/ 
+.orders {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.orders .cutomer-order-container{
+    margin-top: 40px;
+}
+
+.orders .cutomer-order-container h1{
+    font-size: $heading-font-1;
+    color: $black;
+    font-weight: bolder;
+    line-height: 1.5rem;
+    margin-bottom: 7px;
+}
+
+.orders .customer-order-container table{
+    font-size: $heading-font-2;
+    line-height: 1.5rem;
+}
+
+.orders .customer-order-container table thead tr{
+    color: $box-shadow;
+}
+
+.order-id{
+    color: $green;
+    font-size: $heading-font-2;
+    margin-bottom: 3px;
+}
+
+.order-info{
+    color: $light-color;
+    font-size: $heading-font-2;
+}
+
+
+
+
+
+
 /*-----------------
 media queries start 
 ------------------*/
