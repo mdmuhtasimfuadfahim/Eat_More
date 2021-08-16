@@ -6,6 +6,9 @@
     
         <form action="/login" method="POST">
     
+            <% if(messages.error) { %>
+                <span class="text-red-500 text-2xl font-bold"><%= messages.error %></span>
+            <% } %>
             <div class="inputBox">
                 <div class="input">
                     <label for="email">your email</label>
@@ -16,7 +19,7 @@
                     <input name="password" id="password" type="password" placeholder="********************">
                 </div>
             </div>
-            <button type="submit" value="" class="btn">Login</button>
+            <button type="submit" class="btn">Login</button>
             <a href="/registration">Don't have account?</a>
         </form>
     

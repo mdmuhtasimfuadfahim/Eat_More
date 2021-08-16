@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 4000
 const session = require('express-session')
 const flash = require('express-flash')
 const MongoDbStore = require('connect-mongo')
+const passport = require('passport')
 
 
 
@@ -57,6 +58,15 @@ app.use(session({
 }))
 
 
+/*-------------
+passport config
+--------------*/ 
+const passportInit = require('./app/config/passport')
+passportInit(passport)
+app.use(passport.initialize())
+app.use(passport.session())
+
+
 app.use(flash())
 
 
@@ -72,6 +82,7 @@ app.use(express.json())
 golbal  middleware
 -----------------*/ 
 app.use((req, res, next)=>{
+    res.locals.user = req.user
     res.locals.session = req.session
     next()
 })

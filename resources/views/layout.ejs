@@ -31,8 +31,14 @@
 
         <div class="icons">
             <i class="fas fa-bars" id="menu-bars"></i>
-            <a href="/login"><i class="fas fa-sign-in-alt"></i></a>
-            <a href="/registration"><i class="fas fa-user-plus"></i></a>
+            <% if(user) { %>
+                <form id="logOut" action="/logout" method="POST"> </form>  
+                    <a onclick="document.getElementById('logOut').submit()" href="#"><i class="fas fa-sign-out-alt"></i></a>
+                
+            <% } else { %>    
+                <a href="/login"><i class="fas fa-sign-in-alt"></i></a>
+                <a href="/registration"><i class="fas fa-user-plus"></i></a>
+            <% } %>
             <i class="fas fa-search" id="search-icon"></i>
             <a href="/" class="fas fa-heart"></a>
             <a href="/cart" class="fas fa-shopping-cart">

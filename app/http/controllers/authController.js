@@ -2,6 +2,7 @@ const multer = require('multer')
 const User = require('../../models/user')
 const bcrypt = require('bcrypt')
 const path = require('path')
+const passport = require('passport')
 
 /*------------image upload operation---------*/
 let storage = multer.diskStorage({
@@ -22,9 +23,34 @@ function authController(){
         login(req, res){
             res.render('auth/login')
         },
+        
+        postLogin(req, res, next){
+            passport.authenticate('local', (err, user, info) =>{
+                if(err){
+                    req.flash('error', info.message)
+                    return next(err)
+                }
+
+                if(!user){
+                    req.flash('error', info.message)
+                    return res.redirect('/login')
+                }
+
+                req.login(user, (err) =>{
+                    if(err){
+                        req.flash('error', info.message)
+                        return next(err)
+                    }
+
+                    return res.redirect('/')
+                })
+            })(req, res, next)
+        },
+
         registration (req, res) {
             res.render('auth/registration')
         },
+
         postRegistration(req, res){
             upload(req, res, async function (err) {
             const { name, email, phone, address, password, image } = req.body
@@ -98,6 +124,11 @@ function authController(){
                 return res.redirect('/registration')
             })
         }) 
+        },
+
+        logout(req, res){
+            req.logout()
+            return res.redirect('/login')
         }
     }
 
