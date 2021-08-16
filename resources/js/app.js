@@ -1,5 +1,7 @@
-
-import { addToCart } from './addToCart'
+import { initAdmin } from './admin';
+import { addToCart } from './addToCart';
+import axios from 'axios';
+import noty from 'noty';
 
 let menu = document.querySelector('#menu-bars');
 let navbar = document.querySelector('.navbar');
@@ -95,6 +97,9 @@ window.onload = fadeOut;
 
 /*----------call addToCart.js file---------*/
 addToCart() 
+
+/*----------call admin.js file-------------*/
+initAdmin() 
 
 /*----------remove order success alert---------*/
 const alertMsg = document.querySelector('#success-alert')

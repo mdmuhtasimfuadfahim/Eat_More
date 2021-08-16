@@ -34,7 +34,11 @@
             <% if(user) { %>
                 <form id="logOut" action="/logout" method="POST"> </form>  
                     <a onclick="document.getElementById('logOut').submit()" href="#"><i class="fas fa-sign-out-alt"></i></a>
-                
+                <% if(user.role === 'admin') { %>
+                    <a href="/admin/orders"><i class="fas fa-box"></i></a>
+                <% } else { %>
+                    <a href="/customer/orders"><i class="fas fa-box"></i></a>
+                <% } %>
             <% } else { %>    
                 <a href="/login"><i class="fas fa-sign-in-alt"></i></a>
                 <a href="/registration"><i class="fas fa-user-plus"></i></a>

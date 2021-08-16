@@ -1,5 +1,5 @@
 <section class="orders">
-    <div class="cutomer-order-container mx-auto pt-12">
+    <div class="customer-order-container mx-auto pt-12">
         <h1 class="fas fas fa-utensils heading py-16">My Orders</h1>
         <% if(messages.success) { %>
         <div id="success-alert" class="flex items-center bg-green-500 
@@ -14,13 +14,13 @@
             <table class="customer-order-table w-full mx-auto table-auto">
                 <thead>
                     <tr>
-                          <th class="text-2xl px-4 py-2 text-left">Orders</th>
-                          <th class="text-2xl px-4 py-2 text-left">Status</th>
-                          <th class="text-2xl px-4 py-2 text-left">Admin Email</th>
-                          <th class="text-2xl px-4 py-2 text-left">Admin Contact</th>
-                          <th class="text-2xl px-4 py-2 text-left">Placed Time</th>
-                          <th class="text-2xl px-4 py-2 text-left">Placed Date</th>
-                          <th class="text-2xl px-4 py-2 text-left">Payment Status</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Orders</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Status</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Admin Email</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Admin Contact</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Placed Time</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Placed Date</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Payment Status</th>
                     </tr>  
                 </thead>
                 <%
@@ -28,7 +28,7 @@
                     let parsedItems = Object.values(menus)
                     return parsedItems.map((menuItem) =>{
                         return `
-                           ${ menuItem.menus.foodName } - ${ menuItem.qty } Pcs ...
+                           ${ menuItem.menus.foodName } - ${ menuItem.qty } Pcs  
                            `
                     }).join('')
                 } 
@@ -37,11 +37,9 @@
                     <% if(orders.length) { %>
                       <% orders.forEach((order) => { %>
                         <tr>
-                            <td class="text-2xl border px-4 py-2 mx-auto text-left">
-                                <h3 class="order-id text-green">
-                                    <%= order._id %>
-                                </h3>
-                                <p class="order-info"><%= renderOrderItems(order.menus) %></p>
+                            <td class="border px-4 py-2 text-green-900 text-left">
+                                <p class="order-id"> <%= order._id %></p>
+                                <div class="order-info"><p><%= renderOrderItems(order.menus) %></p></div>
                             </td>
                             <td class="order-info text-2xl border px-4 py-2 text-left"><%= order.status %></td>
                             <td class="order-info text-2xl border px-4 py-2 text-left">muhtasim.fahim.98@gmail.com</td>

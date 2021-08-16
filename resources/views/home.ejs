@@ -12,7 +12,11 @@
                         <h3><%= menus.foodName %></h3>
                         <p><%= menus.description %></p>
                         <h4> ৳ <%= menus.price %></h4>
-                        <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Order Now</a>
+                        <% if(user.role === 'admin') { %>
+                           <a href="/admin/orders" class="btn" type="button">Go Back</a>
+                        <% } else { %>
+                           <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Order Now</a>
+                        <% } %>
                     </div>
                     <div class="image">
                         <img src="/img/<%= menus.image %>" alt="">
@@ -49,7 +53,11 @@
                     <i class="fas fa-star-half-alt"></i>
                 </div>
                 <span> ৳ <%= menus.price %></span>
-                <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                <% if(user.role === 'admin') { %>
+                    <a href="/admin/orders" class="btn" type="button">Go Back</a>  
+                <% } else { %>
+                    <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                <% } %>
             </div>
             <!-- single food end -->
             <% } %>
@@ -116,7 +124,11 @@
                     </div>
                     <h3><%= menus.foodName %></h3>
                     <p><%= menus.description %>.</p>
-                    <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                    <% if(user.role === 'admin') { %>
+                        <a href="/admin/orders" class="btn" type="button">Go Back</a>
+                    <% } else{ %>
+                       <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                    <% } %>
                     <span class="price"> ৳ <%= menus.price %></span>
                 </div>
             </div>

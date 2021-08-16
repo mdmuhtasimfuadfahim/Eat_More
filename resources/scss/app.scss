@@ -782,18 +782,34 @@ order page section start
     color: $box-shadow;
 }
 
+.order-header{
+    color: $black;
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+}
+
 .order-id{
     color: $green;
-    font-size: $heading-font-2;
+    font-size: 1.4rem;
     margin-bottom: 3px;
 }
 
 .order-info{
     color: $light-color;
-    font-size: $heading-font-2;
+    font-size: 1.4rem;
 }
 
-
+/*--------------
+admin order page
+---------------*/ 
+.orders .admin-order-container{
+    row-gap: 1rem;
+    overflow-x: auto;
+}
+.admin-order-table{
+    overflow-x: auto;
+    overflow-y: auto;
+}
 
 
 
