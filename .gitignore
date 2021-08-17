@@ -1,2 +1,8 @@
 node_modules
 .env
+dishes.txt
+menu.txt
+food.json
+public/*
+!public/.gitkeep
+.DS_Store

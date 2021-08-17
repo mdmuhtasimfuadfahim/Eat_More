@@ -1,0 +1,4 @@
+MONGO_CONNECTION_URL = mongodb://localhost:'your'/exmaple
+COOKIE_SECRET = thisIsMySecret
+
+STRIPE_PRIVATE_KEY = sk_testanfnfb
