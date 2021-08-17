@@ -42,11 +42,11 @@
                                 <div class="order-info"><p><%= renderOrderItems(order.menus) %></p></div>
                             </td>
                             <td class="order-info text-2xl border px-4 py-2 text-left"><%= order.status %></td>
-                            <td class="order-info text-2xl border px-4 py-2 text-left">muhtasim.fahim.98@gmail.com</td>
-                            <td class="order-info text-2xl border px-4 py-2 text-left">+8801744866688</td>
+                            <td class="order-info text-2xl border px-4 py-2 text-left">arafatkamal210@gmail.com</td>
+                            <td class="order-info text-2xl border px-4 py-2 text-left">+8801780139086</td>
                             <td class="order-info text-2xl border px-4 py-2 text-left"><%= moment(order.createdAt).format('hh:mmA') %></td>
                             <td class="order-info text-2xl border px-4 py-2 text-left"><%= moment(order.createdAt).format('DD:MM:YYYY') %></td>
-                            <td class="order-info text-2xl border px-4 py-2 text-left">COD</td>
+                            <td class="order-info text-2xl border px-4 py-2 text-left"><%= order.paymentStatus ? 'Paid' : 'Not paid' %></td>
                         </tr>
                       <% }) %>
                     <% } else { %>

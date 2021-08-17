@@ -15,13 +15,6 @@ const passport = require('passport')
 
 
 
-/*-----------
-event emitter
-------------*/
-const eventEmitter = new Emitter()
-app.set('eventEmitter', eventEmitter)
-
-
 /*----------
 log requests
 -----------*/
@@ -44,6 +37,13 @@ const mongodbstore = new MongoDbStore({
     dbName: "foodShop",
     stringify: false
 })
+
+
+/*-----------
+event emitter
+------------*/
+const eventEmitter = new Emitter()
+app.set('eventEmitter', eventEmitter)
 
 
 /*------------
@@ -101,6 +101,24 @@ routing control
 require('./routes/web')(app)
 
 
-app.listen(PORT, () =>{
+const server = app.listen(PORT, () =>{
     console.log(`Listening on port ${PORT}`)
+})
+
+
+/*---------------
+socket operation
+---------------*/
+const io = require('socket.io')(server)
+io.on('connection', (socket)=>{
+    /*-------join--------*/ 
+    // console.log(socket.id)
+    socket.on('join', (orderId)=>{
+        // console.log(orderId)
+        socket.join(orderId)
+    })
+})
+
+eventEmitter.on('orderPlaced', (data)=>{
+    io.to('adminRoom').emit('orderPlaced', data)
 })

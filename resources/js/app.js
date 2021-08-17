@@ -2,6 +2,7 @@ import { initAdmin } from './admin';
 import { addToCart } from './addToCart';
 import axios from 'axios';
 import noty from 'noty';
+import { initStripe } from './stripe'
 
 let menu = document.querySelector('#menu-bars');
 let navbar = document.querySelector('.navbar');
@@ -95,11 +96,32 @@ function fadeOut(){
 
 window.onload = fadeOut;
 
+
+
 /*----------call addToCart.js file---------*/
 addToCart() 
 
-/*----------call admin.js file-------------*/
-initAdmin() 
+
+/*---------socket operation (real time)--------*/ 
+let socket = io() 
+
+/*--------Join-----------*/
+// if(order){
+//   socket.emit('join', `order_${order._id}`)
+// }
+
+let adminAreaPath = window.location.pathname
+
+if(adminAreaPath.includes('admin')){
+  /*----------call admin.js file-------------*/
+  initAdmin(socket) 
+  socket.emit('join', 'adminRoom')
+}
+
+
+/*----------call stripe.js file-----------*/
+initStripe()
+
 
 /*----------remove order success alert---------*/
 const alertMsg = document.querySelector('#success-alert')
@@ -108,3 +130,8 @@ if(alertMsg){
     alertMsg.remove()
   }, 2000)
 }
+
+
+
+
+

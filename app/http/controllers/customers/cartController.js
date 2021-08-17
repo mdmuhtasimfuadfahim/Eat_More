@@ -10,7 +10,7 @@ function cartController(){
             req.session.cart = {
               menus: {},
               totalQty: 0,
-              totalPrice: 0    
+              totalPrice: 0
             }
         }
 
@@ -21,7 +21,9 @@ function cartController(){
         if(!cart.menus[req.body._id]){
             cart.menus[req.body._id]= {
                 menus: req.body,
-                qty: 1
+                qty: 1,
+                optionOne: 'normal',
+                optionTwo: 'normal'
             }
              
 
@@ -33,6 +35,32 @@ function cartController(){
             cart.totalPrice = cart.totalPrice + req.body.price
         }
        return res.json({totalQty: req.session.cart.totalQty})
+    },
+
+    optionOne(req, res){
+        const optionOne = req.body.optionOne
+        const id = req.body.cartID
+
+        let cart = req.session.cart
+
+        console.log(req.body)
+        
+
+        cart.menus[id].optionOne = optionOne
+        return res.redirect('/cart')
+    },
+
+    optionTwo(req, res){
+        const optionTwo = req.body.optionTwo
+        const id = req.body.cartIDTwo
+
+        let cart = req.session.cart
+
+        console.log(req.body)
+        
+
+        cart.menus[id].optionTwo = optionTwo
+        return res.redirect('/cart')
     }
  }
 }

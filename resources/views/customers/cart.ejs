@@ -17,20 +17,22 @@
                     <h1 class="cart-item-name text-2xl md:text-xl inline-block"><%= food.menus.foodName %></h1>
                    <h2 class="cart-item text-2xl md:text-xl"><span>eat more</span></h2> 
                 </div>
-            <form action="" method="POST">
-                <input type="hidden" name="cartID" value="">
-                <select onchange="" name="quantity" class="mt-5 cart-item block appearance-none bg-white border  w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+            <form action="/cart/option/one" method="POST">
+                <input type="hidden" name="cartID" value="<%= food.menus._id %>">
+                <select onchange="this.form.submit()" name="optionOne" class="mt-5 cart-item block appearance-none bg-white border  w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="food.menus.optionOne"><%= food.optionOne %></option>
                     <option value="spicy">spicy</option>
-                    <option value="oily">oily</option>
-                    <option value="sweet">sweet</option>
+                    <option value="peppery">peppery</option>
+                    <option value="soleless">soleless</option>
                 </select> 
             </form> 
-            <form action="" method="POST">
-                <input type="hidden" name="cartID" value="">
-                <select onchange="" name="quantity" class="mt-5 cart-item block appearance-none bg-white border  w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
+            <form action="/cart/option/two" method="POST">
+                <input type="hidden" name="cartIDTwo" value="<%= food.menus._id %>">
+                <select onchange="this.form.submit()" name="optionTwo" class="mt-5 cart-item block appearance-none bg-white border  w-full lg:w-2/3 border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="food.menus.optionTwo"><%= food.optionTwo %></option>
+                    <option value="mayonnaise">mayonnaise</option>
+                    <option value="sauce">sauce</option>
+                    <option value="chilli">chilli</option>
                 </select> 
             </form> 
                 <span class="mt-5 cart-item font-bold text-xm md:text-xl"><%= food.qty %> Pcs</span>
@@ -61,13 +63,11 @@
                         </div>
                     </div>
                     <input 
-                    name="phone" class="cart-item border border-gray-400 p-2 w-1/2" type="text" placeholder="Contact">
-                   <div class="mt-4"> 
-                    <div id="card-element">
+                    name="phone" class="mb-4 cart-item border border-gray-400 p-2 w-1/2" type="text" placeholder="Contact">
                     <input 
                     name="address" class="cart-item border border-gray-400 p-2 w-1/2" type="text" placeholder="Address">
                    <div class="mt-4"> 
-                    <div id="card-element">
+                    <div class="cart-item" id="card-element"></div>
                     <button 
                     class=" inline-block btn mt-10" type="submit">Order Now</button> 
                    </div>

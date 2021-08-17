@@ -12,10 +12,14 @@
                         <h3><%= menus.foodName %></h3>
                         <p><%= menus.description %></p>
                         <h4> ৳ <%= menus.price %></h4>
-                        <% if(user.role === 'admin') { %>
-                           <a href="/admin/orders" class="btn" type="button">Go Back</a>
+                        <% if(user) { %>
+                            <% if(user.role === 'admin') { %>
+                               <a href="/admin/orders" class="btn" type="button">Go Back</a>
+                            <% } else { %>
+                               <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Order Now</a>
+                            <% } %>
                         <% } else { %>
-                           <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Order Now</a>
+                            <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Order Now</a>
                         <% } %>
                     </div>
                     <div class="image">
@@ -53,9 +57,13 @@
                     <i class="fas fa-star-half-alt"></i>
                 </div>
                 <span> ৳ <%= menus.price %></span>
-                <% if(user.role === 'admin') { %>
-                    <a href="/admin/orders" class="btn" type="button">Go Back</a>  
-                <% } else { %>
+                <% if(user) { %>
+                    <% if(user.role === 'admin') { %>
+                        <a href="/admin/orders" class="btn" type="button">Go Back</a>  
+                    <% } else { %>
+                        <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                    <% } %>
+                <%} else { %>
                     <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
                 <% } %>
             </div>
@@ -78,15 +86,15 @@
 
             <div class="content">
                 <h3>best food in Bangladesh</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, sequi corrupti corporis quaerat voluptatem ipsam neque labore modi autem, saepe numquam quod reprehenderit rem? Tempora aut soluta odio corporis nihil!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, nemo. Sit porro illo eos cumque deleniti iste alias, eum natus.</p>
+                <p>We provide multi-food items of Thai, Chinese & Italian fast-food.Our aim is to provide happiness through well-prepared meals using only quality ingredients and a pleasant environment that will make you feel home-like.</p>
+                <p>We offer lavishly decorated dish with multi cuisine menus, especially Thai, Chinese and Cultural cuisine. We also serve Bangla foods.</p>
                 <div class="icons-container">
                     <div class="icons">
                         <i class="fas fa-shipping-fast"></i>
                         <span>free delivery</span>
                     </div>
                     <div class="icons">
-                        <i class="fas fa-dollar-sign"></i>
+                        <i class="font-bold">$</i>
                         <span>easy payments</span>
                     </div>
                     <div class="icons">
@@ -124,10 +132,14 @@
                     </div>
                     <h3><%= menus.foodName %></h3>
                     <p><%= menus.description %>.</p>
-                    <% if(user.role === 'admin') { %>
-                        <a href="/admin/orders" class="btn" type="button">Go Back</a>
-                    <% } else{ %>
-                       <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                    <% if(user) { %>
+                        <% if(user.role === 'admin') { %>
+                            <a href="/admin/orders" class="btn" type="button">Go Back</a>
+                        <% } else{ %>
+                           <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                        <% } %>
+                    <% } else { %>
+                        <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
                     <% } %>
                     <span class="price"> ৳ <%= menus.price %></span>
                 </div>

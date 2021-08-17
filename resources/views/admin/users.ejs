@@ -1,0 +1,35 @@
+<section class="orders">
+    <div class="customer-order-container mx-auto pt-12">
+        <h1 class="fas fas fa-utensils heading py-16">My Orders</h1>
+            <table class="customer-order-table w-full mx-auto table-auto">
+                <thead>
+                    <tr>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Image</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Customers Name</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Customers Email</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Customers Contact</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Customers Address</th>
+                          <th class="order-header text-2xl px-4 py-2 text-left">Registration Date</th>
+                    </tr>  
+                </thead>
+                <tbody>
+                    <% users.forEach(function(user) {%>
+                        <% if(user.role === 'customer') { %>
+                        <tr>
+                            <td class="order-info text-2xl border px-4 py-2 text-left"><img style="border-radius: 50px" height="70px" width="60px" src="<%= user.image %>" alt="image"></td>
+                            <td class="order-info text-2xl border px-4 py-2 text-left"><%= user.name %></td>
+                            <td class="order-info text-2xl border px-4 py-2 text-left"><%= user.email %></td>
+                            <td class="order-info text-2xl border px-4 py-2 text-left"><%= user.phone %></td>
+                            <td class="order-info text-2xl border px-4 py-2 text-left"><%= user.address %></td>
+                            <td class="order-info text-2xl border px-4 py-2 text-left"><%= moment(users.createdAt).format('DD:MM:YYYY') %></td>
+                        </tr>
+                        <% } %>
+                    <% }) %>
+                        <!-- <tr>
+                            <td class="order-info text-2xl border px-4 py-2">No Users Found</td>
+                        </tr> -->
+
+                </tbody>
+            </table>
+    </div>
+</section>

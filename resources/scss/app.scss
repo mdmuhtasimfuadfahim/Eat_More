@@ -763,6 +763,7 @@ order page section start
 
 .orders .cutomer-order-container{
     margin-top: 40px;
+    overflow-x: auto;
 }
 
 .orders .cutomer-order-container h1{
@@ -811,6 +812,37 @@ admin order page
     overflow-y: auto;
 }
 
+
+/*-----------------
+stripe design start
+-----------------*/
+.StripeElement {
+    box-sizing: border-box;
+    width: 50%;
+    height: 40px;
+    margin-left: auto;
+    padding: 10px 12px;
+  
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+  
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+  }
+  
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+  
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+  
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
 
 
 

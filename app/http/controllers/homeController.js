@@ -1,5 +1,6 @@
 const Menu = require('../../models/menu')
-
+const User = require('../../models/user')
+const moment = require('moment')
 
 function homeController(){
     return{
@@ -12,6 +13,12 @@ function homeController(){
             //     res.render('home', {menus: menus})
             // })
             
+        },
+
+        async customers(req, res){
+            const users = await User.find()
+            console.log(users)
+            return res.render('admin/users', {users: users, moment: moment})
         }
     }
 }
