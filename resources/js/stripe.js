@@ -59,7 +59,7 @@ export async function initStripe(){
     
         if(!card){
             /*-------ajax-----*/
-            placOrder(formObject);
+            placeOrder(formObject);
             // console.log(formObject)
             return;    
         }

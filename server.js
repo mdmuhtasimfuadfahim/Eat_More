@@ -7,12 +7,17 @@ const path = require('path')
 const Emitter = require('events')
 const morgan = require('morgan')
 const expressLayout = require('express-ejs-layouts')
+
+/*----------------
+define port number
+-----------------*/ 
 const PORT = process.env.PORT || 4000
+
+
 const session = require('express-session')
 const flash = require('express-flash')
 const MongoDbStore = require('connect-mongo')
 const passport = require('passport')
-
 
 
 /*----------
@@ -94,6 +99,7 @@ set template engine
 app.use(expressLayout)
 app.set('views', path.join(__dirname, '/resources/views'))
 app.set('view engine', 'ejs')
+
 
 /*-------------
 routing control

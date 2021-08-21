@@ -18,7 +18,7 @@ function initRoutes(app){
     app.get('/', homeController().index)
     
     /*-----------customers cart controller route-------------*/ 
-    app.get('/cart', cartController().cart)
+    app.get('/cart', auth, cartController().cart)
     app.post('/upate-cart', auth, cartController().update)
     app.post('/cart/option/one', cartController().optionOne)
     app.post('/cart/option/two', cartController().optionTwo)

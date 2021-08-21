@@ -19,7 +19,7 @@
                                <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Order Now</a>
                             <% } %>
                         <% } else { %>
-                            <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Order Now</a>
+                            <a href="/registration"><button type="button" class="btn">Registration</a></a>
                         <% } %>
                     </div>
                     <div class="image">
@@ -64,7 +64,7 @@
                         <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
                     <% } %>
                 <%} else { %>
-                    <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                    <a href="/registration"><button type="button" class="btn">Registration</a></a>
                 <% } %>
             </div>
             <!-- single food end -->
@@ -139,7 +139,7 @@
                            <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
                         <% } %>
                     <% } else { %>
-                        <button type="button" data-food="<%= JSON.stringify(menus) %>" class="add-to-cart btn">Add to Cart</button>
+                        <a href="/registration"><button type="button" class="btn">Registration</a></a>
                     <% } %>
                     <span class="price"> ৳ <%= menus.price %></span>
                 </div>

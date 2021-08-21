@@ -2473,7 +2473,7 @@ function _initStripe() {
 
                 if (!card) {
                   /*-------ajax-----*/
-                  placOrder(formObject); // console.log(formObject)
+                  (0,_apiService__WEBPACK_IMPORTED_MODULE_1__.placeOrder)(formObject); // console.log(formObject)
 
                   return;
                 }

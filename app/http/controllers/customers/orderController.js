@@ -5,8 +5,9 @@ const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 function orderController(){
     return{
         store(req, res){
-            /*-----------validate request---------*/
             const{ phone, address, stripeToken, paymentType } = req.body
+
+            /*-----------validate request---------*/
             if(!phone || !address){
                 return res.status(422).json({ message: 'All Fields are Required'})
             }
@@ -41,7 +42,7 @@ function orderController(){
                                 const eventEmitter = req.app.get('eventEmitter')
                                 eventEmitter.emit('orderPlaced', ord)
                                 delete req.session.cart
-                                return res.json({ message: 'Payment and Order done Successfully'});
+                                return res.json({ message: 'Payment Done and Order Placed Successfully'});
                             }).catch(err =>{
                                 console.log(err)
                             })
@@ -49,7 +50,14 @@ function orderController(){
                             delete req.session.cart
                             return res.json({ message: 'Payment Failed, You can Pay at Delivery Time'});
                         })
-                    }  
+                    } else{
+                        console.log(placedOrder)
+                        /*--------emit events-------*/
+                        const eventEmitter = req.app.get('eventEmitter')
+                        eventEmitter.emit('orderPlaced', placedOrder)
+                        delete req.session.cart
+                        return res.json({ message: 'Order Placed Successfully'});
+                    }
                 })
             }).catch(err =>{
                 return res.status(500).json({ message: 'Something went Wrong'});

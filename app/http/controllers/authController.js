@@ -74,7 +74,7 @@ function authController(){
             }
 
             if(!req.file){
-                return res.json({ error: 'Somthing Went Wrong'})
+                return res.json({ error: 'Something Went Wrong'})
             }
             
             /*---------validate request--------*/ 

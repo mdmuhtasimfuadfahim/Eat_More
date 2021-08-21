@@ -27,10 +27,13 @@ function cartController(){
             }
              
 
+            /*---------cart total---------*/ 
             cart.totalQty = cart.totalQty + 1
             cart.totalPrice = cart.totalPrice + req.body.price
         } else{
             cart.menus[req.body._id].qty = cart.menus[req.body._id].qty + 1
+
+            /*---------cart total---------*/ 
             cart.totalQty = cart.totalQty + 1
             cart.totalPrice = cart.totalPrice + req.body.price
         }
