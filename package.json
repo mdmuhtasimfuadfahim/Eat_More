@@ -1,7 +1,7 @@
 {
   "name": "arafat",
   "version": "1.0.0",
-  "description": "This is a food delivery app",
+  "description": "This is a food app",
   "main": "index.js",
   "author": "arafat.0x",
   "scripts": {

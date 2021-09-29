@@ -464,11 +464,13 @@ section:nth-child(even) {
 /*----------------
 home section start
 -----------------*/
-.home .home-slider .slide {
+section.home .swiper-container .swiper-wrapper .swiper-slide {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  left: 2rem;
+  right: 2rem;
   padding-top: 9rem;
 }
 
